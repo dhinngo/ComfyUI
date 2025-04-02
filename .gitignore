@@ -21,3 +21,13 @@ venv/
 *.log
 web_custom_versions/
 .DS_Store
+
+# === 以下は追跡したい重要フォルダ ===
+!models/checkpoints/**
+!models/clip/**
+!models/diffusion_models/**
+!models/loras/**
+!models/vae/**
+!models/configs/**
+!custom_nodes/**
+!user/default/workflows/**

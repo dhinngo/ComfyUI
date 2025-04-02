@@ -1,0 +1,19 @@
+services:
+  comfyui:
+    build:
+      context: C:\Program Files\ComfyUI
+    ports:
+      - "8188:8188"
+    volumes:
+      - ./models:/opt/ComfyUI/models
+      - ./output:/opt/ComfyUI/output
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all
+      - CUDA_VISIBLE_DEVICES=0
